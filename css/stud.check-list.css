@@ -1,0 +1,28 @@
+.student-info tr td:nth-child(1){
+    padding-right: 20px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.student-info tr td:nth-child(2){
+    font-size: 15px;
+    font-weight: 500;
+    color: #555555;
+}
+
+.enrolled-sub{
+    background-color: rgb(122, 206, 255);
+}
+
+.credited-sub{
+    background-color: rgb(121, 255, 94);
+}
+
+.failed-sub{
+    background-color: rgb(255, 110, 110);
+}
+
+.enrolled-sub.failed-sub{
+    background-color: rgb(255, 255, 128);
+}

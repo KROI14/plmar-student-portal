@@ -1,0 +1,52 @@
+.outer-container{
+    overflow: auto;
+}
+
+.subject-enlist{
+    padding: 10px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subject-enlist table tr td:nth-child(1){
+    padding-right: 50px;
+    padding-top: 5px;
+}
+
+.subject-enlist table.misc-fee{
+    font-size: 12px;
+}
+
+.subject-enlist table.fee-details tr:nth-child(2){
+    border-bottom: 1px solid black;
+}
+
+.subject-enlist table.fee-details tr td{
+    padding-right: 50px;
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+.subject-enlist table.subjects{
+    font-size: 12px;
+}
+
+
+/* Modal CSS */
+#modal-payment-options ul li{
+    list-style-type: none;
+}
+
+#modal-payment-options ul li.option-display{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#modal-payment-options table.modal-disp-details{
+    font-size: 14px;
+}
+
+#modal-payment-options table.modal-disp-details tr td:nth-child(1){
+    padding-right: 30px;
+}

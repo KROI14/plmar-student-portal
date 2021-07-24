@@ -1,0 +1,15 @@
+.img-profile-container{
+    margin-left: auto;
+    margin-right: auto;
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.input-group{
+    max-width: 500px;
+}

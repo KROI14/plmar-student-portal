@@ -1,0 +1,10 @@
+.reg-form-container{
+    overflow: auto;
+    padding: 10px;
+}
+
+.register-inputs{
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}

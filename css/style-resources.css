@@ -1,0 +1,98 @@
+.header{
+    font-size: 50px;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+.sub-header{
+    font-size: 30px;
+    font-weight: 600;
+    color: #444444;
+}
+
+.phar{
+    font-size: 15px;
+    font-weight: 500;
+    color: #4e4e4e;
+}
+
+.title{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.plmar-input{
+    border: 2px solid #2a9df4;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    color: #444444;
+    width: 100%;
+    font-size: 16px;
+}
+
+.plmar-btn{
+    background-color: #2a9df4;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.plmar-btn:hover{
+    background-color: #187bcd;
+    cursor: pointer;
+}
+
+.table-container{
+    border-left: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
+    height: 500px;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.plmar-table{
+    width: 100%;
+}
+
+.plmar-table thead th{
+    background-color: #2a9df4;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.plmar-table thead th:first-child{
+    border-top-left-radius: 5px;
+}
+
+.plmar-table thead th:last-child{
+    border-top-right-radius: 5px;
+}
+
+.plmar-table tbody tr td{
+    padding: 10px;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.plmar-table-hover tbody tr:hover{
+    background-color: #ececec;
+    cursor: pointer;
+}
+
+.card-container{
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px gray;
+}
+
+.status-container{
+    padding: 15px;
+    box-shadow: 0px 0px 3px gray;
+    background-color: white;
+    max-width: 350px;
+}

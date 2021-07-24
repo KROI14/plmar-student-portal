@@ -1,0 +1,91 @@
+body{
+    padding-top: 90px;
+    font-family: 'Spartan', sans-serif;
+}
+
+nav{
+    background-color: #2a9df4;
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    transition: .2s ease all;
+    z-index: 100;
+}
+
+nav .logo-container{
+    display: inline-flex;
+    align-items: center;
+    height: 90px;
+    padding: 15px;
+    float: left;
+}
+
+nav .btn-menu{
+    display: inline-flex;
+    align-items: center;
+    height: 90px;
+    padding: 15px;
+    float: right;
+    cursor: pointer;
+}
+
+nav .btn-menu i{
+    color: #e0e0e0;
+    font-size: 20px;
+}
+
+nav .btn-menu:hover i{
+    color: white;
+}
+
+nav ul{
+    margin-top: 90px;
+    margin-bottom: 0px;
+    padding: 0px;
+    list-style: none;
+
+}
+
+nav ul li a{
+    display: block;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav ul li a:hover, nav ul li a.active{
+    color: #ffffff;
+}
+
+@media(min-width: 992px){
+    nav{
+        height: 90px !important;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    nav .btn-menu{
+        display: none;
+    }
+
+    nav ul{
+        margin-top: 0px;
+        display: inline-flex;
+        float: right;
+        height: 90px;
+        align-items: center;
+        padding: 15px;
+    }
+
+    nav ul li a{
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0px;
+    }
+}

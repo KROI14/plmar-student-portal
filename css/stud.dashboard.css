@@ -1,0 +1,19 @@
+div.announcement{
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.list-group{
+    z-index: -1;
+}
+
+div.list-group a.list-group-item{
+    max-height: 120px;
+    display: block;
+    overflow: hidden;
+}
+
+div.list-group a.list-group-item p{
+    line-height: 26px;
+}
