@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2021 at 03:01 PM
+-- Generation Time: Aug 03, 2021 at 11:49 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -36,6 +36,16 @@ CREATE TABLE `address` (
   `Province` varchar(50) NOT NULL,
   `Residency` varchar(20) NOT NULL DEFAULT 'n/a'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `address`
+--
+
+INSERT INTO `address` (`StudentID`, `HouseNo`, `Street`, `Barangay`, `City`, `Province`, `Residency`) VALUES
+('ST-0001', '168-354', 'Sed Rd.', 'Pinagbuhatan', 'Pasig City', 'Metro Manila', 'non-marikina'),
+('ST-0002', 'Ap #998-1692', 'Sem. Road', 'Barangka', 'Marikina City', 'Metro Manila', 'marikina'),
+('ST-0003', '746-1629', 'Quisque Ave', 'San Roque', 'Cainta', 'Rizal', 'non-marikina'),
+('ST-0004', '8510', 'Per Street', 'Caniogan', 'Pasig City', 'Metro Manila', 'non-marikina');
 
 -- --------------------------------------------------------
 
@@ -76,7 +86,10 @@ INSERT INTO `admin` (`AdminID`, `Firstname`, `Lastname`, `Birthdate`, `Role`, `D
 ('AD-0014', 'Mark', 'Zuckerberg', '1984-05-14', 'faculty', 'IT', 'zuckerberg.faculty@plmar', '12345678', 'GettyImages-945005812.jpg'),
 ('AD-0015', 'Gabe', 'Newell', '1962-11-03', 'faculty', 'IT', 'newell.faculty@plmar', '12345678', 'Gabe_Newell_in_the_Oval_Office.png'),
 ('AD-0016', 'Ellen', 'Degeneres', '1958-01-26', 'faculty', 'COMM', 'degeneres.faculty@plmar', '12345678', 'Ellen_DeGeneres.jpg'),
-('AD-0017', 'Al', 'Roker', '2021-07-21', 'faculty', 'COMM', 'roker.faculty@plmar', '12345678', 'al-roker-suit-t.jpg');
+('AD-0017', 'Al', 'Roker', '2021-07-21', 'faculty', 'COMM', 'roker.faculty@plmar', '12345678', 'al-roker-suit-t.jpg'),
+('AD-0018', 'Rachel', 'Velasquez', '1978-12-03', 'dean', 'EDUC', 'velasquez.dean@plmar', '12345678', '1517545830151.jfif'),
+('AD-0019', 'Axel', 'Compton', '1988-02-05', 'faculty', 'EDUC', 'compton.faculty@plmar', '12345678', 'maxresdefault.jpg'),
+('AD-0020', 'Gail', 'Bell', '1988-10-15', 'faculty', 'EDUC', 'bell.faculty@plmar', '12345678', '8496522-1x1-large.jpg');
 
 -- --------------------------------------------------------
 
@@ -101,7 +114,11 @@ CREATE TABLE `admission_info` (
 --
 
 INSERT INTO `admission_info` (`AdmissionID`, `StudentID`, `Entry`, `PreferredCourse`, `ControlNo`, `EnrollStatus`, `AdmissionStatus`, `SchoolYear`, `CreatedAt`) VALUES
-('AD-0000', 'ST-0000', '', '', 0, 'payment', 'approved', '', '2021-06-28 12:06:26');
+('AD-0000', 'ST-0000', '', '', 0, 'payment', 'approved', '', '2021-06-28 12:06:26'),
+('AD-0001', 'ST-0001', 'old', 'BACHELOR IN ELEMENTARY EDUCATION', 5087146, 'finish', 'finish', '2021 - 2022', '2021-07-28 12:31:26'),
+('AD-0002', 'ST-0002', 'old', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', 4729821, 'finish', 'finish', '2021 - 2022', '2021-07-30 15:29:29'),
+('AD-0003', 'ST-0003', 'old', 'BACHELOR OF ARTS IN COMMUNICATION', 7189414, 'finish', 'finish', '2021 - 2022', '2021-07-30 15:44:14'),
+('AD-0004', 'ST-0004', 'old', 'BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY', 5875521, 'finish', 'finish', '2021 - 2022', '2021-08-02 09:07:10');
 
 -- --------------------------------------------------------
 
@@ -148,7 +165,15 @@ CREATE TABLE `assessment_due` (
 --
 
 INSERT INTO `assessment_due` (`AssessmentID`, `AcademicID`, `Assessment`, `TuitionFee`, `MiscFee`) VALUES
-('AS-0000', 'ACD-0000', '', '0.00', '0.00');
+('AS-0000', 'ACD-0000', '', '0.00', '0.00'),
+('AS-0001', 'ACD-0001', 'Midterm Assessment', '3320.00', '1766.00'),
+('AS-0002', 'ACD-0001', 'Final Assessment', '3320.00', '1766.00'),
+('AS-0003', 'ACD-0002', 'Midterm Assessment', '0.00', '0.00'),
+('AS-0004', 'ACD-0002', 'Final Assessment', '0.00', '0.00'),
+('AS-0005', 'ACD-0003', 'Midterm Assessment', '0.00', '0.00'),
+('AS-0006', 'ACD-0003', 'Final Assessment', '0.00', '0.00'),
+('AS-0007', 'ACD-0004', 'Midterm Assessment', '3680.00', '1766.00'),
+('AS-0008', 'ACD-0004', 'Final Assessment', '3680.00', '1766.00');
 
 -- --------------------------------------------------------
 
@@ -277,7 +302,47 @@ INSERT INTO `class_miscellaneous` (`CourseID`, `YearLevel`, `Semester`, `MiscID`
 ('CO1-0012', '3rd Year', '2nd Semester', 'MISC-0002'),
 ('CO1-0012', '3rd Year', '2nd Semester', 'MISC-0003'),
 ('CO1-0012', '3rd Year', '2nd Semester', 'MISC-0004'),
-('CO1-0012', '3rd Year', '2nd Semester', 'MISC-0005');
+('CO1-0012', '3rd Year', '2nd Semester', 'MISC-0005'),
+('CO1-0001', '1st Year', '1st Semester', 'MISC-0001'),
+('CO1-0001', '1st Year', '1st Semester', 'MISC-0002'),
+('CO1-0001', '1st Year', '1st Semester', 'MISC-0003'),
+('CO1-0001', '1st Year', '1st Semester', 'MISC-0004'),
+('CO1-0001', '1st Year', '1st Semester', 'MISC-0005'),
+('CO1-0001', '1st Year', '2nd Semester', 'MISC-0001'),
+('CO1-0001', '1st Year', '2nd Semester', 'MISC-0002'),
+('CO1-0001', '1st Year', '2nd Semester', 'MISC-0003'),
+('CO1-0001', '1st Year', '2nd Semester', 'MISC-0004'),
+('CO1-0001', '1st Year', '2nd Semester', 'MISC-0005'),
+('CO1-0001', '2nd Year', '1st Semester', 'MISC-0001'),
+('CO1-0001', '2nd Year', '1st Semester', 'MISC-0002'),
+('CO1-0001', '2nd Year', '1st Semester', 'MISC-0003'),
+('CO1-0001', '2nd Year', '1st Semester', 'MISC-0004'),
+('CO1-0001', '2nd Year', '1st Semester', 'MISC-0005'),
+('CO1-0001', '2nd Year', '2nd Semester', 'MISC-0001'),
+('CO1-0001', '2nd Year', '2nd Semester', 'MISC-0002'),
+('CO1-0001', '2nd Year', '2nd Semester', 'MISC-0003'),
+('CO1-0001', '2nd Year', '2nd Semester', 'MISC-0004'),
+('CO1-0001', '2nd Year', '2nd Semester', 'MISC-0005'),
+('CO1-0001', '3rd Year', '1st Semester', 'MISC-0001'),
+('CO1-0001', '3rd Year', '1st Semester', 'MISC-0002'),
+('CO1-0001', '3rd Year', '1st Semester', 'MISC-0003'),
+('CO1-0001', '3rd Year', '1st Semester', 'MISC-0004'),
+('CO1-0001', '3rd Year', '1st Semester', 'MISC-0005'),
+('CO1-0001', '3rd Year', '2nd Semester', 'MISC-0001'),
+('CO1-0001', '3rd Year', '2nd Semester', 'MISC-0002'),
+('CO1-0001', '3rd Year', '2nd Semester', 'MISC-0003'),
+('CO1-0001', '3rd Year', '2nd Semester', 'MISC-0004'),
+('CO1-0001', '3rd Year', '2nd Semester', 'MISC-0005'),
+('CO1-0001', '4th Year', '1st Semester', 'MISC-0001'),
+('CO1-0001', '4th Year', '1st Semester', 'MISC-0002'),
+('CO1-0001', '4th Year', '1st Semester', 'MISC-0003'),
+('CO1-0001', '4th Year', '1st Semester', 'MISC-0004'),
+('CO1-0001', '4th Year', '1st Semester', 'MISC-0005'),
+('CO1-0001', '4th Year', '2nd Semester', 'MISC-0001'),
+('CO1-0001', '4th Year', '2nd Semester', 'MISC-0002'),
+('CO1-0001', '4th Year', '2nd Semester', 'MISC-0003'),
+('CO1-0001', '4th Year', '2nd Semester', 'MISC-0004'),
+('CO1-0001', '4th Year', '2nd Semester', 'MISC-0005');
 
 -- --------------------------------------------------------
 
@@ -292,6 +357,16 @@ CREATE TABLE `contact_person` (
   `Email` varchar(50) NOT NULL,
   `ContactNo` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact_person`
+--
+
+INSERT INTO `contact_person` (`StudentID`, `Firstname`, `Lastname`, `Email`, `ContactNo`) VALUES
+('ST-0001', 'Laurel', 'Chang', '.consequat@ultricesposuerecubilia.ca', '9663942145'),
+('ST-0002', 'Dennis', 'Goff', 'dolor@velitdui.ca', '9646226656'),
+('ST-0003', 'Octavius', 'Santana', '@euarcuMorbi.org', '9192538113'),
+('ST-0004', 'Yuli', 'Jackson', 'ante@ultricies.co', '9544837147');
 
 -- --------------------------------------------------------
 
@@ -354,6 +429,16 @@ CREATE TABLE `downpayment` (
   `DatePaid` date NOT NULL,
   `CreatedAt` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `downpayment`
+--
+
+INSERT INTO `downpayment` (`AcademicID`, `AmountPaid`, `PaymentMode`, `DatePaid`, `CreatedAt`) VALUES
+('ACD-0001', '2543.00', 'Installment', '0000-00-00', '2021-07-28 12:41:10'),
+('ACD-0002', '300.00', 'Full Payment', '0000-00-00', '2021-07-30 15:32:09'),
+('ACD-0003', '2223.00', 'Full Payment', '0000-00-00', '2021-07-30 15:46:09'),
+('ACD-0004', '2723.00', 'Installment', '0000-00-00', '2021-08-02 12:08:33');
 
 -- --------------------------------------------------------
 
@@ -421,7 +506,8 @@ CREATE TABLE `grades_encode_sched` (
 INSERT INTO `grades_encode_sched` (`ScheduleID`, `StartingDateTime`, `EndingDateTime`, `SchoolYear`, `Semester`) VALUES
 (1, '2021-07-16 11:55:00am', '2021-07-16 03:00:00pm', '2020 - 2021', '1st Semester'),
 (2, '2021-07-19 06:10:00am', '2021-07-20 06:10:00am', '2020 - 2021', '1st Semester'),
-(3, '2021-07-20 12:04:00pm', '2021-07-21 12:04:00pm', '2020 - 2021', '1st Semester');
+(3, '2021-07-20 12:04:00pm', '2021-07-21 12:04:00pm', '2020 - 2021', '1st Semester'),
+(4, '2021-08-02 11:49:00am', '2021-08-02 12:49:00pm', '2021 - 2022', '1st Semester');
 
 -- --------------------------------------------------------
 
@@ -520,7 +606,11 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`StudentID`, `Firstname`, `Middlename`, `Lastname`, `Gender`, `Email`, `ContactNo`, `Birthdate`, `Image`) VALUES
-('ST-0000', '', '', '', '', '', '0', '0000-00-00', '');
+('ST-0000', '', '', '', '', '', '0', '0000-00-00', ''),
+('ST-0001', 'Giselle', 'Price', 'Raymond', 'Female', 'id@massaSuspendisseeleifend.com', '9314530992', '2001-06-03', '6100dd9e7ca72-MV5BMWVlM2I5NmItNGMxNy00YmIyLTg1MmUtYmU4MzUzMTA3MmI0XkEyXkFqcGdeQXVyMTI0MzEwMDc2._V1_UY1200_CR265,0,630,1200_AL_.jpg'),
+('ST-0002', 'Tobias', 'Small', 'Brooks', 'Male', 'libero@necante.net', '9370329758', '2001-01-28', '6103aa59b5475-TobyBrooks.jfif'),
+('ST-0003', 'Neville', 'Bowman', 'Meyer', 'Male', 'fringilla@libero.ca', '9908522340', '2002-02-04', '6103adce35247-5d94ea2354248.image.jpg'),
+('ST-0004', 'Zenia', 'Meadows', 'Mendez', 'Female', 'cubilia@ultricesiaculisodio', '9211596470', '2005-11-27', '6107453e88f39-image-asset.jpeg');
 
 -- --------------------------------------------------------
 
@@ -542,7 +632,11 @@ CREATE TABLE `student_academic_info` (
 --
 
 INSERT INTO `student_academic_info` (`AcademicID`, `StudentID`, `CourseID`, `YearLevel`, `Semester`, `SchoolYear`) VALUES
-('ACD-0000', 'ST-0000', 'CO1-0009', 'n/a', 'n/a', 'n/a');
+('ACD-0000', 'ST-0000', 'CO1-0009', 'n/a', 'n/a', 'n/a'),
+('ACD-0001', 'ST-0001', 'CO1-0001', '1st Year', '1st Semester', '2021 - 2022'),
+('ACD-0002', 'ST-0002', 'CO1-0009', '1st Year', '1st Semester', '2021 - 2022'),
+('ACD-0003', 'ST-0003', 'CO1-0012', '1st Year', '1st Semester', '2021 - 2022'),
+('ACD-0004', 'ST-0004', 'CO1-0009', '1st Year', '1st Semester', '2021 - 2022');
 
 -- --------------------------------------------------------
 
@@ -555,6 +649,16 @@ CREATE TABLE `student_account` (
   `Username` varchar(20) NOT NULL,
   `Password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student_account`
+--
+
+INSERT INTO `student_account` (`StudentID`, `Username`, `Password`) VALUES
+('ST-0001', 'raymond.stud@plmar', '12345678'),
+('ST-0002', 'brooks.stud@plmar', '12345678'),
+('ST-0003', 'meyer.stud@plmar', '12345678'),
+('ST-0004', 'mendez.stud@plmar', '12345678');
 
 -- --------------------------------------------------------
 
@@ -578,7 +682,40 @@ CREATE TABLE `student_class` (
 --
 
 INSERT INTO `student_class` (`ClassID`, `StudentID`, `SubjectID`, `Day`, `Time`, `Section`, `AdminID`, `SchoolYear`) VALUES
-('CID-0000', 'ST-0000', 'SUB-0001', '', '', '', NULL, '');
+('CID-0000', 'ST-0000', 'SUB-0001', '', '', '', NULL, ''),
+('CID-0001', 'ST-0001', 'SUB-0146', 'TUE', 'AM 10:30 - 1:30', 'Section 1', NULL, '2021 - 2022'),
+('CID-0002', 'ST-0001', 'SUB-0147', 'THU', 'PM 5:30 - 8:30', 'Section 1', NULL, '2021 - 2022'),
+('CID-0003', 'ST-0001', 'SUB-0148', 'SAT', 'PM 2:00 - 5:00', 'Section 1', NULL, '2021 - 2022'),
+('CID-0004', 'ST-0001', 'SUB-0149', 'SAT', 'AM 7:30 - 10:30', 'Section 1', NULL, '2021 - 2022'),
+('CID-0005', 'ST-0001', 'SUB-0150', 'WED', 'PM 2:00 - 5:00', 'Section 1', NULL, '2021 - 2022'),
+('CID-0006', 'ST-0001', 'SUB-0151', 'SUN', 'PM 5:00 - 8:00', 'Section 1', NULL, '2021 - 2022'),
+('CID-0007', 'ST-0001', 'SUB-0152', 'TUE', 'PM 5:00 - 8:00', 'Section 1', NULL, '2021 - 2022'),
+('CID-0008', 'ST-0001', 'SUB-0153', 'FRI', 'PM 2:00 - 4:00', 'Section 1', NULL, '2021 - 2022'),
+('CID-0009', 'ST-0002', 'SUB-0001', 'MON', 'AM 7:30 - 10:30', 'Section 1', 'AD-0006', '2021 - 2022'),
+('CID-0010', 'ST-0002', 'SUB-0002', 'THU', 'PM 5:00 - 8:00', 'Section 1', 'AD-0006', '2021 - 2022'),
+('CID-0011', 'ST-0002', 'SUB-0003', 'FRI', 'PM 2:00 - 5:00', 'Section 1', 'AD-0006', '2021 - 2022'),
+('CID-0012', 'ST-0002', 'SUB-0004', 'WED', 'PM 5:00 - 8:00', 'Section 1', 'AD-0008', '2021 - 2022'),
+('CID-0013', 'ST-0002', 'SUB-0005', 'TUE', 'PM 5:00 - 8:00', 'Section 1', 'AD-0011', '2021 - 2022'),
+('CID-0014', 'ST-0002', 'SUB-0006', 'SAT', 'PM 5:30 - 8:30', 'Section 1', 'AD-0011', '2021 - 2022'),
+('CID-0015', 'ST-0002', 'SUB-0007', 'SUN', 'PM 5:00 - 8:00', 'Section 1', 'AD-0011', '2021 - 2022'),
+('CID-0016', 'ST-0002', 'SUB-0008', 'THU', 'PM 5:30 - 8:30', 'Section 1', 'AD-0008', '2021 - 2022'),
+('CID-0017', 'ST-0002', 'SUB-0009', 'TUE', 'AM 10:00 - 12:00', 'Section 1', 'AD-0008', '2021 - 2022'),
+('CID-0018', 'ST-0003', 'SUB-0099', 'TUE', 'AM 7:30 - 10:30', 'Section 1', NULL, '2021 - 2022'),
+('CID-0019', 'ST-0003', 'SUB-0100', 'WED', 'AM 10:30 - 1:30', 'Section 1', NULL, '2021 - 2022'),
+('CID-0020', 'ST-0003', 'SUB-0101', 'THU', 'PM 5:00 - 8:00', 'Section 1', NULL, '2021 - 2022'),
+('CID-0021', 'ST-0003', 'SUB-0102', 'THU', 'PM 5:00 - 8:00', 'Section 1', NULL, '2021 - 2022'),
+('CID-0022', 'ST-0003', 'SUB-0103', 'WED', 'PM 2:00 - 5:00', 'Section 1', NULL, '2021 - 2022'),
+('CID-0023', 'ST-0003', 'SUB-0104', 'SUN', 'PM 2:00 - 4:00', 'Section 1', NULL, '2021 - 2022'),
+('CID-0024', 'ST-0003', 'SUB-0105', 'TUE', 'AM 10:30 - 1:30', 'Section 1', NULL, '2021 - 2022'),
+('CID-0025', 'ST-0004', 'SUB-0001', 'MON', 'AM 7:30 - 10:30', 'Section 1', 'AD-0006', '2021 - 2022'),
+('CID-0026', 'ST-0004', 'SUB-0002', 'THU', 'PM 5:00 - 8:00', 'Section 1', 'AD-0006', '2021 - 2022'),
+('CID-0027', 'ST-0004', 'SUB-0003', 'FRI', 'PM 2:00 - 5:00', 'Section 1', 'AD-0006', '2021 - 2022'),
+('CID-0028', 'ST-0004', 'SUB-0004', 'WED', 'PM 5:00 - 8:00', 'Section 1', 'AD-0008', '2021 - 2022'),
+('CID-0029', 'ST-0004', 'SUB-0005', 'TUE', 'PM 5:00 - 8:00', 'Section 1', 'AD-0011', '2021 - 2022'),
+('CID-0030', 'ST-0004', 'SUB-0006', 'SAT', 'PM 5:30 - 8:30', 'Section 1', 'AD-0011', '2021 - 2022'),
+('CID-0031', 'ST-0004', 'SUB-0007', 'SUN', 'PM 5:00 - 8:00', 'Section 1', 'AD-0011', '2021 - 2022'),
+('CID-0032', 'ST-0004', 'SUB-0008', 'THU', 'PM 5:30 - 8:30', 'Section 1', 'AD-0008', '2021 - 2022'),
+('CID-0033', 'ST-0004', 'SUB-0009', 'TUE', 'AM 10:00 - 12:00', 'Section 1', 'AD-0008', '2021 - 2022');
 
 -- --------------------------------------------------------
 
@@ -598,7 +735,23 @@ CREATE TABLE `student_files` (
 --
 
 INSERT INTO `student_files` (`FileID`, `AdmissionID`, `Filename`, `File`) VALUES
-('FI-0000', 'AD-0000', '', '');
+('FI-0000', 'AD-0000', '', ''),
+('FI-0001', 'AD-0001', 'F138.jfif', '6100dd9ee4680-F138.jfif'),
+('FI-0002', 'AD-0001', 'GoodMoral.jfif', '6100dd9ef1c2b-GoodMoral.jfif'),
+('FI-0003', 'AD-0001', 'meralco.jpg', '6100dd9f17d2c-meralco.jpg'),
+('FI-0004', 'AD-0001', 'AdmissionEssay.pdf', '6100dd9f203c4-AdmissionEssay.pdf'),
+('FI-0005', 'AD-0002', 'F138.jfif', '6103aa5a03925-F138.jfif'),
+('FI-0006', 'AD-0002', 'GoodMoral.jfif', '6103aa5a14eb8-GoodMoral.jfif'),
+('FI-0007', 'AD-0002', 'meralco.jpg', '6103aa5a20c73-meralco.jpg'),
+('FI-0008', 'AD-0002', 'AdmissionEssay.pdf', '6103aa5a3eb2b-AdmissionEssay.pdf'),
+('FI-0009', 'AD-0003', 'F138.jfif', '6103adcea0445-F138.jfif'),
+('FI-0010', 'AD-0003', 'GoodMoral.jfif', '6103adceab92c-GoodMoral.jfif'),
+('FI-0011', 'AD-0003', 'meralco.jpg', '6103adcec057e-meralco.jpg'),
+('FI-0012', 'AD-0003', 'AdmissionEssay.pdf', '6103adcecd9e4-AdmissionEssay.pdf'),
+('FI-0013', 'AD-0004', 'F138.jfif', '6107453eed728-F138.jfif'),
+('FI-0014', 'AD-0004', 'GoodMoral.jfif', '6107453f15761-GoodMoral.jfif'),
+('FI-0015', 'AD-0004', 'meralco.jpg', '6107453f1d057-meralco.jpg'),
+('FI-0016', 'AD-0004', 'AdmissionEssay.pdf', '6107453f2cec2-AdmissionEssay.pdf');
 
 -- --------------------------------------------------------
 
@@ -664,6 +817,22 @@ INSERT INTO `subject` (`SubjectCode`, `Description`, `Units`, `SubjectFee`, `Typ
 ('Com178', 'Intro to Film', '3.00', '2300.00', 'major', 'COMM'),
 ('Com181', 'Communication Management', '3.00', '1250.00', 'major', 'COMM'),
 ('Com184', 'Organizational Culture and Communication', '3.00', '1270.00', 'major', 'COMM'),
+('EDE101', 'Elective 1', '3.00', '1000.00', 'major', 'EDUC'),
+('EDE102', 'Elective 2', '3.00', '1000.00', 'major', 'EDUC'),
+('EDU101', 'The Child and Adolescent Learners and Learning Princilples', '3.00', '1300.00', 'major', 'EDUC'),
+('EDU102', 'The Teacher and the Community, School Culture and Organizational Leadership', '3.00', '1500.00', 'major', 'EDUC'),
+('EDU103', 'The Teaching Profession', '3.00', '1530.00', 'major', 'EDUC'),
+('EDU104', 'Foundation of Special and Inclusive', '3.00', '1200.00', 'major', 'EDUC'),
+('EDU105', 'Facilitating Learner-Centered Teaching', '3.00', '1200.00', 'major', 'EDUC'),
+('EDU106', 'Assessment in Learning 1', '3.00', '1200.00', 'major', 'EDUC'),
+('EDU107', 'Assessment in Learning 2', '3.00', '1000.00', 'major', 'EDUC'),
+('EDU108', 'Technology for Teaching and Learning', '3.00', '1200.00', 'major', 'EDUC'),
+('EDU109', 'The Teacher and the School Curriculum', '3.00', '1900.00', 'major', 'EDUC'),
+('EDU110', 'Building and Enhancing New Literacies Across the Curriculum', '3.00', '1800.00', 'major', 'EDUC'),
+('EDU111', 'Field Study 1', '3.00', '1700.00', 'major', 'EDUC'),
+('EDU112', 'Field Study 2', '3.00', '1000.00', 'major', 'EDUC'),
+('EDU113', 'Teaching Internship', '5.00', '4000.00', 'major', 'EDUC'),
+('FIL153', 'Teorya at Praktika ng Pagsasalin', '3.00', '1100.00', 'major', 'EDUC'),
 ('GED111', 'Understanding the Self', '3.00', '1000.00', 'minor', 'PSYCH'),
 ('GED121', 'Readings in Phi. History', '3.00', '1000.00', 'minor', 'PSYCH'),
 ('GED131', 'Contemporary World', '3.00', '1000.00', 'minor', 'PSYCH'),
@@ -739,6 +908,25 @@ INSERT INTO `subject` (`SubjectCode`, `Description`, `Units`, `SubjectFee`, `Typ
 ('Res100', 'Communication Research', '3.00', '2000.00', 'major', 'COMM'),
 ('Res101', 'Thesis 1 (Proposal Defense)', '3.00', '1800.00', 'major', 'COMM'),
 ('Res102', 'Thesis 2 (Final Defense)', '3.00', '2500.00', 'major', 'COMM'),
+('SPED101', 'Fundamentals of SPED', '3.00', '1250.00', 'major', 'EDUC'),
+('SPED102', 'Psychology of Children with Special Needs', '3.00', '1000.00', 'major', 'EDUC'),
+('SPED103', 'Observational Child Study', '3.00', '1200.00', 'major', 'EDUC'),
+('SPED104', 'Assessment of Children with Special Needs', '3.00', '800.00', 'major', 'EDUC'),
+('SPED105', 'Curriculum for SPED', '3.00', '1200.00', 'major', 'EDUC'),
+('SPED106', 'Preparation of Instructional Materials for SPED', '3.00', '1000.00', 'major', 'EDUC'),
+('SPED107', 'Psychological and Physical Knowledge Approaches', '3.00', '1260.00', 'major', 'EDUC'),
+('SPED108', 'Inclusive Education', '3.00', '1900.00', 'major', 'EDUC'),
+('SPED109', 'ICT and SPED', '3.00', '1500.00', 'major', 'EDUC'),
+('SPED110', 'Therapeutic Interventions', '3.00', '1900.00', 'major', 'EDUC'),
+('SPED111', 'SPED Classroom Management', '3.00', '1100.00', 'major', 'EDUC'),
+('SPED112', 'Movement, Arts & Music for Children', '3.00', '1560.00', 'major', 'EDUC'),
+('SPED113', 'Individualized Education Program', '3.00', '1145.00', 'major', 'EDUC'),
+('SPED114', 'Research Method', '3.00', '1300.00', 'major', 'EDUC'),
+('SPED115', 'Behavioral Management', '3.00', '1100.00', 'major', 'EDUC'),
+('SPED116', 'Home & Family Life of Children with Exceptionalities', '3.00', '1700.00', 'major', 'EDUC'),
+('SPED117', 'Guidance and Counselling for Children with Special Needs', '3.00', '1000.00', 'major', 'EDUC'),
+('SPED118', 'Research in SPED', '3.00', '1000.00', 'major', 'EDUC'),
+('SPED119', 'Effective Communication with Professionals and Families', '3.00', '1000.00', 'major', 'EDUC'),
 ('SW1', 'Knowledge and Philosophical Foundations of the Social Work Profession', '3.00', '1100.00', 'major', 'PSYCH'),
 ('SW2', 'Philippine Social Realities and Social Welfare', '3.00', '1100.00', 'major', 'PSYCH'),
 ('SW3', 'Social Work Practice with Individuals and Families', '3.00', '900.00', 'major', 'PSYCH'),
@@ -906,7 +1094,62 @@ INSERT INTO `subject_course` (`SubjectID`, `SubjectCode`, `CourseID`, `YearLevel
 ('SUB-0142', 'Res102', 'CO1-0012', '4th Year', '1st Semester'),
 ('SUB-0143', 'Com181', 'CO1-0012', '4th Year', '2nd Semester'),
 ('SUB-0144', 'Com184', 'CO1-0012', '4th Year', '2nd Semester'),
-('SUB-0145', 'OJT101', 'CO1-0012', '4th Year', '2nd Semester');
+('SUB-0145', 'OJT101', 'CO1-0012', '4th Year', '2nd Semester'),
+('SUB-0146', 'GED111', 'CO1-0001', '1st Year', '1st Semester'),
+('SUB-0147', 'GED141', 'CO1-0001', '1st Year', '1st Semester'),
+('SUB-0148', 'GED151', 'CO1-0001', '1st Year', '1st Semester'),
+('SUB-0149', 'GED171', 'CO1-0001', '1st Year', '1st Semester'),
+('SUB-0150', 'EDU101', 'CO1-0001', '1st Year', '1st Semester'),
+('SUB-0151', 'EDU102', 'CO1-0001', '1st Year', '1st Semester'),
+('SUB-0152', 'NSTP1', 'CO1-0001', '1st Year', '1st Semester'),
+('SUB-0153', 'PED101', 'CO1-0001', '1st Year', '1st Semester'),
+('SUB-0154', 'GED121', 'CO1-0001', '1st Year', '2nd Semester'),
+('SUB-0155', 'GED131', 'CO1-0001', '1st Year', '2nd Semester'),
+('SUB-0156', 'GED161', 'CO1-0001', '1st Year', '2nd Semester'),
+('SUB-0157', 'GED181', 'CO1-0001', '1st Year', '2nd Semester'),
+('SUB-0158', 'EDU103', 'CO1-0001', '1st Year', '2nd Semester'),
+('SUB-0159', 'SPED101', 'CO1-0001', '1st Year', '2nd Semester'),
+('SUB-0160', 'NSTP2', 'CO1-0001', '1st Year', '2nd Semester'),
+('SUB-0161', 'PED102', 'CO1-0001', '1st Year', '2nd Semester'),
+('SUB-0162', 'GED152', 'CO1-0001', '2nd Year', '1st Semester'),
+('SUB-0163', 'EDU104', 'CO1-0001', '2nd Year', '1st Semester'),
+('SUB-0164', 'SPED102', 'CO1-0001', '2nd Year', '1st Semester'),
+('SUB-0165', 'SPED103', 'CO1-0001', '2nd Year', '1st Semester'),
+('SUB-0166', 'SPED104', 'CO1-0001', '2nd Year', '1st Semester'),
+('SUB-0167', 'SPED105', 'CO1-0001', '2nd Year', '1st Semester'),
+('SUB-0168', 'GED182', 'CO1-0001', '2nd Year', '1st Semester'),
+('SUB-0169', 'PED103', 'CO1-0001', '2nd Year', '1st Semester'),
+('SUB-0170', 'FIL153', 'CO1-0001', '2nd Year', '2nd Semester'),
+('SUB-0171', 'EDU105', 'CO1-0001', '2nd Year', '2nd Semester'),
+('SUB-0172', 'EDU106', 'CO1-0001', '2nd Year', '2nd Semester'),
+('SUB-0173', 'SPED107', 'CO1-0001', '2nd Year', '2nd Semester'),
+('SUB-0174', 'SPED108', 'CO1-0001', '2nd Year', '2nd Semester'),
+('SUB-0175', 'GED172', 'CO1-0001', '2nd Year', '2nd Semester'),
+('SUB-0176', 'PED104', 'CO1-0001', '2nd Year', '2nd Semester'),
+('SUB-0177', 'SPED106', 'CO1-0001', '2nd Year', '2nd Semester'),
+('SUB-0178', 'EDU107', 'CO1-0001', '3rd Year', '1st Semester'),
+('SUB-0179', 'EDU108', 'CO1-0001', '3rd Year', '1st Semester'),
+('SUB-0180', 'SPED109', 'CO1-0001', '3rd Year', '1st Semester'),
+('SUB-0181', 'SPED110', 'CO1-0001', '3rd Year', '1st Semester'),
+('SUB-0182', 'SPED111', 'CO1-0001', '3rd Year', '1st Semester'),
+('SUB-0183', 'SPED112', 'CO1-0001', '3rd Year', '1st Semester'),
+('SUB-0184', 'SPED113', 'CO1-0001', '3rd Year', '1st Semester'),
+('SUB-0185', 'GED191', 'CO1-0001', '3rd Year', '1st Semester'),
+('SUB-0187', 'EDU109', 'CO1-0001', '3rd Year', '2nd Semester'),
+('SUB-0188', 'EDU110', 'CO1-0001', '3rd Year', '2nd Semester'),
+('SUB-0189', 'EDU111', 'CO1-0001', '3rd Year', '2nd Semester'),
+('SUB-0190', 'SPED114', 'CO1-0001', '3rd Year', '2nd Semester'),
+('SUB-0191', 'SPED115', 'CO1-0001', '3rd Year', '2nd Semester'),
+('SUB-0192', 'SPED116', 'CO1-0001', '3rd Year', '2nd Semester'),
+('SUB-0193', 'GED192', 'CO1-0001', '3rd Year', '2nd Semester'),
+('SUB-0194', 'GED183', 'CO1-0001', '3rd Year', '2nd Semester'),
+('SUB-0195', 'EDU112', 'CO1-0001', '4th Year', '1st Semester'),
+('SUB-0196', 'SPED117', 'CO1-0001', '4th Year', '1st Semester'),
+('SUB-0197', 'SPED118', 'CO1-0001', '4th Year', '1st Semester'),
+('SUB-0198', 'SPED119', 'CO1-0001', '4th Year', '1st Semester'),
+('SUB-0199', 'EDE101', 'CO1-0001', '4th Year', '1st Semester'),
+('SUB-0200', 'EDE102', 'CO1-0001', '4th Year', '1st Semester'),
+('SUB-0201', 'EDU113', 'CO1-0001', '4th Year', '2nd Semester');
 
 -- --------------------------------------------------------
 
@@ -980,7 +1223,8 @@ INSERT INTO `subject_reference` (`ReferenceID`, `SubjectCode`, `Title`, `Link`) 
 ('REF-0004', 'GED171', 'Science, Technology and Society', 'https://www.pitzer.edu/academics/field-groups/science-technology-society/'),
 ('REF-0005', 'IT101', 'IT Fundamentals', 'https://www.youscience.com/ohio/files/standards-pdfs/ks_801.pdf'),
 ('REF-0006', 'IT101', 'Information Technology Fundamentals', 'https://study.com/academy/course/computer-science-102-fundamentals-of-information-technology.html'),
-('REF-0007', 'ITC101', 'Overview of Business Intelligence', 'https://www.cio.com/article/2439504/business-intelligence-definition-and-solutions.html');
+('REF-0007', 'ITC101', 'Overview of Business Intelligence', 'https://www.cio.com/article/2439504/business-intelligence-definition-and-solutions.html'),
+('REF-0008', 'GED171', 'Science Technology and Society By CHED', 'https://ched.gov.ph/wp-content/uploads/2017/10/Science-Technology-and-Society.pdf');
 
 --
 -- Indexes for dumped tables
@@ -1168,7 +1412,7 @@ ALTER TABLE `announcement`
 -- AUTO_INCREMENT for table `grades_encode_sched`
 --
 ALTER TABLE `grades_encode_sched`
-  MODIFY `ScheduleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ScheduleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

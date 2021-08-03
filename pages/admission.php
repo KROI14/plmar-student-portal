@@ -419,7 +419,7 @@
                 </ul>
             </div>
             <div class="modal-footer">
-                <button type="button" class="plmar-btn" data-bs-dismiss="modal">I agree</button>
+                <button type="button" class="plmar-btn" data-bs-dismiss="modal" id="btn-agree">I agree</button>
                 <button type="button" class="plmar-btn" onclick="window.location.replace('../pages/index.php')">Decline</button>
             </div>
         </div>

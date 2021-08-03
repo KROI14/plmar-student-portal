@@ -110,34 +110,6 @@ $(function(){
     })
 
 
-
-
-
-    //Admission form scripts
-    // $('#btn-upload-files').on('click', function(){
-    //     let files = $('#input-files')[0].files;
-        
-    //     if(files.length > 0){
-    //         $('#input-files').val("");
-    //         $('#btn-upload-files').removeClass('bg-danger').html('<i class="fas fa-file-upload"></i> Upload File');
-    //         $('#input-files-display').html('');
-    //     }
-    //     else{
-    //         $('#input-files').click();
-    //     }
-    // })
-
-    // $('#input-files').on('change', function(){
-    //     let files = this.files;
-    //     let fileList = "";
-    //     for(let i = 0; i < files.length; i++){
-    //         fileList += `<li>${files[i].name}</li>`
-    //     }
-
-    //     $('#input-files-display').html(fileList);
-    //     $('#btn-upload-files').addClass('bg-danger').html('<i class="far fa-trash-alt"></i> Remove Files');
-    // });
-
     //Terms and agreement
     let url_string = window.location.href;
     let url = new URL(url_string);
@@ -207,7 +179,7 @@ $(function(){
         //if(imgFile.length > 0 && inputFiles.length > 0){ isFilesValid = true; } else{ isFilesValid = false; }//Check if files is populated
 
         for(let i = 0; i < inputFile.length; i++){
-            if($(inputFile[i]).val().length > 0){
+            if($(inputFile[i]).val().length > 0 && $('#input-img-file').val().length > 0){
                 isFilesValid = true;
             }
         }
